@@ -12,6 +12,9 @@
     <header class="main-header">
         <h1 class="title">LA TV Shows</h1>
     </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a TV Show..." oninput="searchCards()">
+    </div>
     <div id="card-container">
         
     </div>
@@ -26,12 +29,22 @@
             </ul>
         </div>
     </div>
+    <div id="removeModeIndicator">
+        <p>Click on a card that you would like to remove.</p>
+    </div>
     <div class="footer">
         <button onclick="quoteAlert();">
             Get A Quote!
         </button>
         <button onclick="removeLastCard();">
-            Remove A Card!
+            Remove Last Card!
+        </button>
+        <button onclick="addCard();">
+            Add A Card!
+        </button>
+        <!-- Add "Toggle Remove Mode" button -->
+        <button id="toggleRemoveMode" onclick="toggleRemoveMode();">
+            Remove Card Mode
         </button>
     </div>
 </body>

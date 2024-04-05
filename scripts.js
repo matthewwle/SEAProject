@@ -30,10 +30,14 @@ const EAST_LOS_HIGH_POSTER_URL = "https://static.wikia.nocookie.net/hulu/images/
 
 // This is an array of strings (TV show titles)
 let titles = [
-    "Fresh Prince of Bel Air",
-    "Curb Your Enthusiasm",
-    "East Los High"
+    { title: "Fresh Prince of Bel Air", imageUrl: FRESH_PRINCE_URL },
+    { title: "Curb Your Enthusiasm", imageUrl: CURB_POSTER_URL },
+    { title: "East Los High", imageUrl: EAST_LOS_HIGH_POSTER_URL }
 ];
+
+let isRemoveMode = false; // Flag to track if we're in remove mode
+
+
 // Your final submission should have much more data than this, and 
 // you should use more than just an array of strings to store it all.
 
@@ -42,26 +46,29 @@ let titles = [
 function showCards() {
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
-    const templateCard = document.querySelector(".card");
-    
-    for (let i = 0; i < titles.length; i++) {
-        let title = titles[i];
 
-        // This part of the code doesn't scale very well! After you add your
-        // own data, you'll need to do something totally different here.
-        let imageURL = "";
-        if (i == 0) {
-            imageURL = FRESH_PRINCE_URL;
-        } else if (i == 1) {
-            imageURL = CURB_POSTER_URL;
-        } else if (i == 2) {
-            imageURL = EAST_LOS_HIGH_POSTER_URL;
-        }
+    // Assuming the first .card is your template and it's outside the #card-container in your HTML.
+    const templateCard = document.querySelector(".card").cloneNode(true);
+    templateCard.style.display = "none"; // Make sure the template itself is not visible
 
-        const nextCard = templateCard.cloneNode(true); // Copy the template card
-        editCardContent(nextCard, title, imageURL); // Edit title and image
-        cardContainer.appendChild(nextCard); // Add new card to the container
-    }
+    titles.forEach((show, index) => {
+        const card = templateCard.cloneNode(true); // Make a deep clone of the template
+        card.style.display = "block"; // Ensure the cloned card is visible
+
+        // Use the editCardContent function to set the title and image URL.
+        // Assuming editCardContent(card, newTitle, newImageURL) is defined to update these elements.
+        editCardContent(card, show.title, show.imageUrl);
+
+        // Set the onclick event for card removal, if in remove mode.
+        card.onclick = function() {
+            if (isRemoveMode) {
+                removeCard(index);
+                toggleRemoveMode(); // Optionally toggle off remove mode after a card is removed
+            }
+        };
+
+        cardContainer.appendChild(card); // Append the card to the container
+    });
 }
 
 function editCardContent(card, newTitle, newImageURL) {
@@ -80,8 +87,18 @@ function editCardContent(card, newTitle, newImageURL) {
     console.log("new card:", newTitle, "- html: ", card);
 }
 
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
+function addCard(){
+    
+        const title = prompt("Enter the title of the TV show:");
+        const imageUrl = prompt("Enter the URL for the TV show's poster image:");
+    
+        // Adding the new show as an object to the titles array
+        titles.push({ title, imageUrl });
+    
+        // Refresh the displayed cards to include the new one
+        showCards();
+    }
+
 
 function quoteAlert() {
     console.log("Button Clicked!")
@@ -92,3 +109,61 @@ function removeLastCard() {
     titles.pop(); // Remove last item in titles array
     showCards(); // Call showCards again to refresh
 }
+
+// Use the existing titles array and functions, then add the toggleRemoveMode function
+function toggleRemoveMode() {
+    isRemoveMode = !isRemoveMode; // Toggle the flag
+    const modeText = isRemoveMode ? "Cancel Remove Mode" : "Remove Card Mode";
+    document.getElementById("toggleRemoveMode").textContent = modeText;
+}
+
+function removeCard(index) {
+    titles.splice(index, 1); // Remove the item at the index
+    showCards(); // Refresh the display of cards
+}
+
+function searchCards() {
+    const searchQuery = document.getElementById("searchInput").value.toLowerCase(); // Get the current value of the input field and convert it to lower case for case-insensitive comparison
+
+    // Filter the titles array to get only those shows whose title includes the search query
+    const filteredTitles = titles.filter(show => show.title.toLowerCase().includes(searchQuery));
+
+    // Now display only the filtered titles
+    showFilteredCards(filteredTitles);
+}
+
+function showFilteredCards(filteredTitles) {
+    const cardContainer = document.getElementById("card-container");
+    cardContainer.innerHTML = ""; // Clear the card container before showing filtered cards
+
+    // Similar to showCards, but use filteredTitles instead of the original titles array
+    filteredTitles.forEach((show, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <div class="card-content">
+                <h2>${show.title}</h2>
+                <img src="${show.imageUrl}" alt="${show.title} Poster">
+            </div>`;
+        card.style.display = "block";
+        card.onclick = function() {
+            if (isRemoveMode) {
+                removeCard(titles.findIndex(title => title.title === show.title)); // Find the original index in titles to remove
+                toggleRemoveMode();
+            }
+        };
+        cardContainer.appendChild(card);
+    });
+}
+
+function toggleRemoveMode() {
+    isRemoveMode = !isRemoveMode; // Toggle the flag
+    const modeText = isRemoveMode ? "Cancel Remove Mode" : "Remove Card Mode";
+    document.getElementById("toggleRemoveMode").textContent = modeText;
+
+    // Show or hide the remove mode indicator based on isRemoveMode
+    document.getElementById("removeModeIndicator").style.display = isRemoveMode ? "block" : "none";
+}
+
+// This calls the addCards() function when the page is first loaded
+document.addEventListener("DOMContentLoaded", showCards);

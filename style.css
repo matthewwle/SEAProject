@@ -19,9 +19,12 @@ body {
 }
 
 #card-container {
+    max-height: 600px; /* Adjust based on your preference */
+    overflow-y: auto; /* Enables vertical scrolling */
     display: flex;
-    justify-content: center;
-    margin: 20px;
+    flex-wrap: wrap; /* Keeps existing wrap behavior */
+    gap: 20px; /* Adjust if needed */
+    padding: 20px;
 }
 
 .card {
@@ -67,4 +70,23 @@ button {
     font-size: 22px;
     cursor: pointer;
     margin: 5px;
+}
+
+#removeModeIndicator {
+    display: none; /* Keeps the div hidden initially */
+    text-align: center;
+    margin-top: 20px;
+    color: #d9534f;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #d9534f;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: auto;
+    max-width: 80%;
 }
