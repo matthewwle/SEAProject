@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
+    <title>Top Asian American Movies</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles">
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
@@ -10,11 +10,12 @@
 
 <body>
     <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
+        <h1 class="title"> BEST ASIAN-AMERICAN MOVIES OF ALL TIME </h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a TV Show..." oninput="searchCards()">
+        </div>
     </header>
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search for a TV Show..." oninput="searchCards()">
-    </div>
+    
     <div id="card-container">
         
     </div>
@@ -22,20 +23,17 @@
         <div class="card-content">
             <h2>TV Show Title</h2>
             <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
+            <p id="year">Year</p>
+            <p id="score">Score</p>
+            <p id="synopsis">Synopsis</p>
         </div>
     </div>
+    
     <div id="removeModeIndicator">
         <p>Click on a card that you would like to remove.</p>
     </div>
     <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
+        
         <button onclick="removeLastCard();">
             Remove Last Card!
         </button>
