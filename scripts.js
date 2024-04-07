@@ -25,7 +25,7 @@
 
 
 
-// This is an array of strings (TV show titles)
+// This is the preloaded dataset on the website
 let titles = [
     { title: "Minding the Gap", imageUrl: "https://resizing.flixster.com/HXK6vSoNFiYb40Jt7z-xZClnZDw=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15082710_p_v8_ac.jpg", date: 2018, score: 100, synopsis: "Three young men bond together to escape volatile families in their Rust Belt hometown. As they face adult responsibilities, unexpected revelations threaten their decade-long friendship."},
 { title: "Free Chol Soo Lee", imageUrl: "https://resizing.flixster.com/Zz6Nqcykg9LvT9mWkqRe3mONGa8=/fit-in/180x240/v2/https://resizing.flixster.com/9AW4Eaq4FJBXKKuct13kg6Vty70=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg4MmE5ZmYzLWU4NzMtNGI2Yi1hYWNjLWI1MjNlYjU3NzU4MS5wbmc=", date: 2022, score: 100, synopsis: "In 1970s San Francisco, 20-year-old Korean immigrant Chol Soo Lee is racially profiled and convicted of a Chinatown gang murder. After spending years fighting to survive, investigative journalist K.W. Lee takes a special interest in his case, igniting an unprecedented social justice movement."},
@@ -83,7 +83,7 @@ let titles = [
 { title: "New York Ninja", imageUrl: "https://resizing.flixster.com/TyZiecNWUMWznYukOsPSebPw9oc=/fit-in/180x240/v2/https://resizing.flixster.com/bXCe34TEEPkzDdv8asdCDPerlMk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2JlMWZkODc0LWViZDUtNDM1Zi1iZTU1LTk4ZDFhM2QzZmM2Zi5qcGc=", date: 2021, score: 96, synopsis: "Taekwondo film legend John Liu stars as a New York everyman who, when pushed too far, is forced to take the law into his own hands and become \"The New York Ninja\" -- a vigilante set on righting wrongs and keeping the peace in a Big Apple on the brink of chaos. Originally filmed in 1984, this martial arts riot was never completed and sat, unedited in a warehouse, for nearly 40 years before being finished by the staff at Vinegar Syndrome."},
 { title: "Chang Can Dunk", imageUrl: "https://resizing.flixster.com/etec3OoBnNtr2qxtGQNNvCVKUeU=/fit-in/180x240/v2/https://resizing.flixster.com/X1Wg117OxEo1hWoQVm3wz_3Gh_c=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZjZjE3OTY4LTRjZTktNDY0ZC05YmY1LTUxZmQ2MzFiMjE3ZS5qcGc=", date: 2023, score: 96, synopsis: "\"Chang Can Dunk\" follows Chang, a 16-year-old, Asian American high school student in the marching band, who bets the school basketball star that he can dunk by Homecoming. The bet leads the 5' 8\" Chang on a quest to find the hops he needs to dunk in order to impress his crush, Kristy, and finally gain the attention and respect of his high school peers. But before he can rise up and truly throw one down, he\'ll have to reexamine everything he knows about himself, his friendships and his family."},
 { title: "The Grace Lee Project", imageUrl: "https://resizing.flixster.com/kFQ5tU3TJ76q5zEBDDGFfU7Lbig=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p160440_p_v8_aj.jpg", date: 2005, score: 95, synopsis: "When filmmaker Grace Lee discovered that her name is very common among Asian-Americans, she also found out that it carries with it a stereotype of the \"good\" Asian; a quiet, well-behaved hard worker. To see if this stereotype holds any water, the director travels the country interviewing other women who share her name. She discovers a wide range of women, and while some fit the image of the name, others, like a goth artist and community activist, certainly do not."},
-{ title: "Journey from the Fall", imageUrl: "https://resizing.flixster.com/bIPZBZa19y6UeZFAGAh4WLTQSDk=/fit-in/180x240/v2/https://images.fandango.com/cms/assets/5d84d010-59b1-11ea-b175-791e911be53d--rt-poster-defaultgif.gif", date: 2007, score: 92, synopsis: "None"},
+{ title: "Journey from the Fall", imageUrl: "https://resizing.flixster.com/bIPZBZa19y6UeZFAGAh4WLTQSDk=/fit-in/180x240/v2/https://images.fandango.com/cms/assets/5d84d010-59b1-11ea-b175-791e911be53d--rt-poster-defaultgif.gif", date: 2007, score: 92, synopsis: "Thirteen years after the end of the Vietnam War, a family who was tragically affected by the war are forced to emigrate to America."},
 { title: "Twinsters", imageUrl: "https://resizing.flixster.com/1mPsIa22YWyspPwOjLZS0swq3Zo=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11857775_p_v8_aa.jpg", date: 2015, score: 92, synopsis: "A French fashion design student stumbles upon a familiar face on YouTube: her own. Finding the resemblance uncanny, she sends the video's American creator a message and the two discover that they are, in fact, twins separated at birth."},
 { title: "Colma: The Musical", imageUrl: "https://resizing.flixster.com/WJb8paono2DOqDiHso-fU8IaNu8=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p168890_p_v8_aa.jpg", date: 2006, score: 90, synopsis: "Three friends (Jake Moreno, H.P. Mendoza, L.A. Renigen), all recent high-school graduates, wonder what to do with the rest of their lives."},
 { title: "The Search for General Tso", imageUrl: "https://resizing.flixster.com/0zkq0kHsZ9ofjFRTuF99cepx6Wg=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10735672_p_v8_aa.jpg", date: 2014, score: 90, synopsis: "Filmmaker Ian Cheney explores the origin of a spicy-sweet chicken dish that is a popular item in many of America's Chinese restaurants."},
@@ -192,11 +192,11 @@ function editCardContent(card, newTitle, newImageURL) {
 }
 
 function addCard() {
-    const title = prompt("Enter the title of the show/movie:");
-    const imageUrl = prompt("Enter the URL for the show/movie's poster image:");
-    const date = prompt("Enter the release year:");
-    const score = prompt("Enter the Rotten Tomatoes score (%):");
-    const synopsis = prompt("Enter the synopsis:");
+    const title = prompt("Enter the movie's title:");
+    const imageUrl = prompt("Enter the URL for the movie's poster image:");
+    const date = prompt("Enter the movie's release year:");
+    const score = prompt("Enter the movie's Rotten Tomatoes score (%):");
+    const synopsis = prompt("Enter the movie's synopsis:");
     const id = titles.length;
 
     // Create a new item object with the provided information
@@ -217,6 +217,7 @@ function addCard() {
 
     // Refresh the displayed cards to include the new one
     showCards();
+    sortAndShowCards(document.getElementById('sortBy').value);
     document.querySelector(`[data-id="${id}"]`).scrollIntoView({
         behavior: 'smooth'});
 }
@@ -299,3 +300,38 @@ function toggleRemoveMode() {
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('sortBy').addEventListener('change', function() {
+        sortAndShowCards(this.value);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Optionally, call sortAndShowCards initially if you want to sort the cards right when the page loads based on the default selection in the dropdown
+    // sortAndShowCards(document.getElementById('sortBy').value);
+});
+
+function sortAndShowCards(sortBy) {
+    // Sort titles array based on the provided criterion
+    switch (sortBy) {
+        case 'title-asc':
+            titles.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 'rating-desc':
+            titles.sort((a, b) => b.score - a.score);
+            break;
+        case 'date-asc':
+            titles.sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
+            break;
+        case 'date-desc':
+            titles.sort((a, b) => parseInt(b.date, 10) - parseInt(a.date, 10));
+            break;
+        default:
+            // Handle default case if necessary
+            break;
+    }
+
+    // Refresh the displayed cards to reflect the sorted titles
+    showCards();
+    
+}

@@ -10,10 +10,17 @@
 
 <body>
     <header class="main-header">
-        <h1 class="title"> BEST ASIAN-AMERICAN MOVIES OF ALL TIME </h1>
+        <h1 class="title"> MUST-WATCH ASIAN-AMERICAN MOVIES </h1>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search for a TV Show..." oninput="searchCards()">
+            <input type="text" id="searchInput" placeholder="Search for a Movie..." oninput="searchCards()">
         </div>
+        <select id="sortBy">
+            <option value="default">Choose Option...</option>
+            <option value="title-asc">A-Z</option>
+            <option value="rating-desc">Rating (highest to lowest)</option>
+            <option value="date-asc">Date (oldest first)</option>
+            <option value="date-desc">Date (newest first)</option>
+        </select>
     </header>
     
     <div id="card-container">
@@ -30,19 +37,19 @@
     </div>
     
     <div id="removeModeIndicator">
-        <p>Click on a card that you would like to remove.</p>
+        <p>Click on a movie that you would like to remove.</p>
     </div>
     <div class="footer">
         
         <button onclick="removeLastCard();">
-            Remove Last Card!
+            Remove Last Movie!
         </button>
         <button onclick="addCard();">
-            Add A Card!
+            Add A Movie!
         </button>
         <!-- Add "Toggle Remove Mode" button -->
         <button id="toggleRemoveMode" onclick="toggleRemoveMode();">
-            Remove Card Mode
+            Remove Movie Mode
         </button>
     </div>
 </body>
