@@ -153,9 +153,11 @@ function showCards() {
             <div class="card-content">
                 <h2>${item.title}</h2>
                 <img src="${item.imageUrl}" alt="${item.title} Poster">
+                <div class = "more-content">
                 <p>Year: ${item.date}</p>
                 <p>Score: <img src="tomato.png" alt="Tomato" class="tomato-icon"> ${item.score}%</p>
                 <p>Synopsis: ${item.synopsis}</p>
+                </div>
             </div>
         `;
         card.style.display = "block";
@@ -270,9 +272,11 @@ function showFilteredCards(filteredTitles) {
         <div class="card-content">
         <h2>${item.title}</h2>
         <img src="${item.imageUrl}" alt="${item.title} Poster">
+        <div class = "more-content">
         <p>Year: ${item.date}</p>
         <p>Score: <img src="tomato.png" alt="Tomato" class="tomato-icon"> ${item.score}</p>
         <p>Synopsis: ${item.synopsis}</p>
+        </div>
     </div>
             `;
         card.style.display = "block";

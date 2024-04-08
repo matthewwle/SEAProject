@@ -10,29 +10,32 @@
 
 <body>
     <header class="main-header">
-        <h1 class="title"> MUST-WATCH ASIAN-AMERICAN MOVIES </h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search for a Movie..." oninput="searchCards()">
-        </div>
+        <h1 class="title"> MUST-WATCH ASIAN-AMERICAN MOVIES LIST </h1>
+        
         <select id="sortBy">
-            <option value="default">Choose Option...</option>
+            <option value="default" disabled selected>Choose Category...</option>
             <option value="title-asc">A-Z</option>
             <option value="rating-desc">Rating (highest to lowest)</option>
             <option value="date-asc">Date (oldest first)</option>
             <option value="date-desc">Date (newest first)</option>
         </select>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a Movie..." oninput="searchCards()">
+        </div>
     </header>
     
     <div id="card-container">
         
     </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
+    <div class="card">
+        <div class="card-content" style="display: none;">
             <h2>TV Show Title</h2>
             <img src="" alt="TV Show Poster">
+            <div class = "more-content">
             <p id="year">Year</p>
             <p id="score">Score</p>
             <p id="synopsis">Synopsis</p>
+        </div>
         </div>
     </div>
     

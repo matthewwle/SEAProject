@@ -5,6 +5,7 @@ body {
 }
 
 .main-header {
+    z-index: 900;
     position: fixed;
     top: 0px;
     width: 100%; 
@@ -19,23 +20,45 @@ body {
 }
 
 
-.search-container {
-    display: flex; /* Ensures elements inside are laid out inline */
-    align-items: center; /* Centers them vertically to match the header's height */
-    margin-left: 10%;
+.search-container input[type="text"] {
+    color: black;
+    font-family: 'Courier New';
+ /* Or any specific width you prefer */
+    font-size: 3em; /* Adjusts the size of the text */
+    width: 400px;
+    margin: 20px; /* Adjust as necessary */
+    padding-top: 10px;
+    box-sizing: border-box; /* Ensures padding does not add to the width */
 }
 
 #sortBy {
-    margin-left: 10%; /* Adds some spacing between the search bar and dropdown */
+    font-family: 'Courier New';
+    font-size: 3em; /* Adjusts the size of the text */
+    width: 200px;
+    margin: 20px; /* Adjust as necessary */
+    padding-top: 10px;
+    box-sizing: border-box; /* Ensures padding does not add to the width */
 }
+
+/* .card .card-content .more-content{
+   display: none;
+}
+
+.card:hover .card-content .more-content{
+    display: block;
+} */
+
+
+
+
 
 .title {
     text-align: center;
-    margin: 0;
+    margin-right: 30px;
     font-size: 8em;
-    font-family: "Helvetica";
-    font-weight: normal;
+    font-family: 'Courier New';
     color: white;
+    font-weight: 510;
 }
 
 #card-container {
@@ -48,10 +71,13 @@ body {
     padding: 20px;
     margin-top: 60px;
     margin-bottom: 60px;
-
+    
 }
 
 .card {
+    
+    position: relative;
+    z-index: 1;
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -59,10 +85,32 @@ body {
     margin: 5px;
 }
 
+.more-content {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events:none;
+}
+
+.card:hover .more-content {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .card-content {
     padding: 20px;
-    font-family: "Verdana";
-    color: #777;
+    font-family: 'Courier New';
+    color: black;
 }
 
 .card-content h2 {
@@ -85,9 +133,11 @@ body {
     justify-content: center; /* Center the content horizontally */
     background-color: rgba(0, 0, 0, 1); /* Ensure opacity is set correctly for the background */
     padding: 10px;
+    z-index: 998;
 }
 
 button {
+    font-family: 'Courier New';
     text-align: center;
     background-color: #666;
     border: none;
