@@ -27,7 +27,7 @@
 
 // This is the preloaded dataset on the website
 let titles = [
-    { title: "Minding the Gap", imageUrl: "https://resizing.flixster.com/HXK6vSoNFiYb40Jt7z-xZClnZDw=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15082710_p_v8_ac.jpg", date: 2018, score: 100, synopsis: "Three young men bond together to escape volatile families in their Rust Belt hometown. As they face adult responsibilities, unexpected revelations threaten their decade-long friendship."},
+{ title: "Minding the Gap", imageUrl: "https://resizing.flixster.com/HXK6vSoNFiYb40Jt7z-xZClnZDw=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15082710_p_v8_ac.jpg", date: 2018, score: 100, synopsis: "Three young men bond together to escape volatile families in their Rust Belt hometown. As they face adult responsibilities, unexpected revelations threaten their decade-long friendship."},
 { title: "Free Chol Soo Lee", imageUrl: "https://resizing.flixster.com/Zz6Nqcykg9LvT9mWkqRe3mONGa8=/fit-in/180x240/v2/https://resizing.flixster.com/9AW4Eaq4FJBXKKuct13kg6Vty70=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg4MmE5ZmYzLWU4NzMtNGI2Yi1hYWNjLWI1MjNlYjU3NzU4MS5wbmc=", date: 2022, score: 100, synopsis: "In 1970s San Francisco, 20-year-old Korean immigrant Chol Soo Lee is racially profiled and convicted of a Chinatown gang murder. After spending years fighting to survive, investigative journalist K.W. Lee takes a special interest in his case, igniting an unprecedented social justice movement."},
 { title: "Driveways", imageUrl: "https://resizing.flixster.com/wEKaizawa1U87a1kc5aGZpn3VzM=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17129977_p_v8_aa.jpg", date: 2019, score: 99, synopsis: "A lonely boy goes with his mother to help clean out his late aunt's house."},
 { title: "Shirkers", imageUrl: "https://resizing.flixster.com/sYDf6JV3b2jzy7V7XHFPUsQ_dFg=/fit-in/180x240/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15082638_p_v8_aa.jpg", date: 2018, score: 99, synopsis: "In 1992 teenager Sandi Tan shoots Singapore's first road movie with her enigmatic American mentor, Georges, who then absconded with all of the footage. The 16 mm film is recovered 20 years later, sending Tan, who is now a novelist living in Los Angeles, on a personal odyssey in search of Georges' footprints."},
@@ -130,7 +130,7 @@ let titles = [
 ];
 
 titles.forEach((title, index) => {
-    title.id = index; // Assigning a simple ID based on index (consider using a more robust method in production)
+    title.id = index; // Assigning a simple ID based on index
   });
 
 let isRemoveMode = false; // Flag to track if we're in remove mode
@@ -162,7 +162,7 @@ function showCards() {
         `;
         card.style.display = "block";
 
-        // Bind click event for removal if in remove mode
+        // click event for removal if in remove mode
         card.addEventListener('click', function() {
             if (isRemoveMode) {
                 const cardId = this.getAttribute('data-id');
@@ -177,21 +177,6 @@ function showCards() {
 
 }
 
-function editCardContent(card, newTitle, newImageURL) {
-    card.style.display = "block";
-
-    const cardHeader = card.querySelector("h2");
-    cardHeader.textContent = newTitle;
-
-    const cardImage = card.querySelector("img");
-    cardImage.src = newImageURL;
-    cardImage.alt = newTitle + " Poster";
-
-    // You can use console.log to help you debug!
-    // View the output by right clicking on your website,
-    // select "Inspect", then click on the "Console" tab
-    console.log("new card:", newTitle, "- html: ", card);
-}
 
 function addCard() {
     const title = prompt("Enter the movie's title:");
