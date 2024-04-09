@@ -230,11 +230,11 @@ function removeLastCard() {
 }
 
 // Use the existing titles array and functions, then add the toggleRemoveMode function
-function toggleRemoveMode() {
-    isRemoveMode = !isRemoveMode; // Toggle the flag
-    const modeText = isRemoveMode ? "Cancel Remove Mode" : "Remove Card Mode";
-    document.getElementById("toggleRemoveMode").textContent = modeText;
-}
+// function toggleRemoveMode() {
+//     isRemoveMode = !isRemoveMode; // Toggle the flag
+//     const modeText = isRemoveMode ? "Cancel Remove Mode" : "Remove Card Mode";
+//     document.getElementById("toggleRemoveMode").textContent = modeText;
+// }
 
 function removeCard(id) {
     // Find the index of the title with the given ID
@@ -274,7 +274,7 @@ function showFilteredCards(filteredTitles) {
         <img src="${item.imageUrl}" alt="${item.title} Poster">
         <div class = "more-content">
         <p>Year: ${item.date}</p>
-        <p>Score: <img src="tomato.png" alt="Tomato" class="tomato-icon"> ${item.score}</p>
+        <p>Score: <img src="tomato.png" alt="Tomato" class="tomato-icon"> ${item.score} %</p>
         <p>Synopsis: ${item.synopsis}</p>
         </div>
     </div>
