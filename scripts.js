@@ -214,12 +214,6 @@ function removeLastCard() {
     showCards(); // Call showCards again to refresh
 }
 
-// Use the existing titles array and functions, then add the toggleRemoveMode function
-// function toggleRemoveMode() {
-//     isRemoveMode = !isRemoveMode; // Toggle the flag
-//     const modeText = isRemoveMode ? "Cancel Remove Mode" : "Remove Card Mode";
-//     document.getElementById("toggleRemoveMode").textContent = modeText;
-// }
 
 function removeCard(id) {
     // Find the index of the title with the given ID
@@ -296,8 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Optionally, call sortAndShowCards initially if you want to sort the cards right when the page loads based on the default selection in the dropdown
-    // sortAndShowCards(document.getElementById('sortBy').value);
 });
 
 function sortAndShowCards(sortBy) {
